@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="BrickSync — LEGO × Fortnite 기반 창의 코딩 교육 프로그램. Epic Games 공인 강사의 STEAM 교육으로 아이들의 상상을 현실로.">
+<title>BrickSync — 창의 코딩 교육 | LEGO × Fortnite × STEAM</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════
+  01. GNB
+════════════════════════════════════════════ -->
+<nav id="gnb">
+  <div class="gnb-inner">
+    <a href="#hero" class="gnb-logo">
+      <div class="gnb-logo-icon">🧱</div>
+      <span class="gnb-logo-text">BrickSync</span>
+    </a>
+    <ul id="gnb-nav">
+      <li><a href="#program">프로그램</a></li>
+      <li><a href="#instructors">강사 소개</a></li>
+      <li><a href="#gallery">갤러리</a></li>
+      <li><a href="#benefits">수료 혜택</a></li>
+      <li><a href="#contact">상담 신청</a></li>
+    </ul>
+    <div class="gnb-right">
+      <a href="#contact" class="btn-p">상담 신청하기 →</a>
+    </div>
+    <button id="gnb-hamburger" aria-label="메뉴">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- 모바일 드로어 -->
+<div id="gnb-drawer">
+  <a href="#program">프로그램 소개</a>
+  <a href="#instructors">강사 소개</a>
+  <a href="#gallery">현장 갤러리</a>
+  <a href="#benefits">수료 혜택</a>
+  <a href="#contact">상담·교육 신청</a>
+  <a href="#contact" class="btn-p" style="margin-top:8px;justify-content:center">상담 신청하기 →</a>
+</div>
+
+<!-- ═══════════════════════════════════════════
+  02. HERO
+════════════════════════════════════════════ -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <canvas id="hero-canvas"></canvas>
+  <div class="hero-content">
+    <div class="hero-badge-row">
+      <span class="hero-badge"><span class="dot"></span> Epic Games 공인 교육센터</span>
+      <span class="hero-badge"><span class="dot"></span> LEGO Education 파트너</span>
+      <span class="hero-badge"><span class="dot"></span> Since 2025</span>
+    </div>
+    <h1 class="hero-title">
+      <span class="yl">Make!</span> <span class="bl">Move!</span> Imagine!
+    </h1>
+    <p style="font-family:'Nunito',sans-serif;font-size:clamp(1.3rem,2.5vw,1.8rem);font-weight:800;color:rgba(255,255,255,.85);margin-bottom:8px;">레고와 포트나이트로 배우는 창의 코딩</p>
+    <p class="hero-sub">STEAM + 영어 + 게임 기반 학습으로 아이들의 상상을 현실로 만듭니다</p>
+    <div class="hero-cta">
+      <a href="#contact" class="btn-p btn-hero-primary">🎯 무료 체험 신청</a>
+      <a href="#program" class="btn-s btn-hero-secondary">프로그램 보기 →</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <span class="hero-stat-num" data-target="500">0</span>
+        <span class="hero-stat-label">수료생</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-num" data-target="120">0</span>
+        <span class="hero-stat-label">교육 회차</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-num" data-target="30">0</span>
+        <span class="hero-stat-label">파트너 기관</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-num" data-target="2025">0</span>
+        <span class="hero-stat-label">설립 연도</span>
+      </div>
+    </div>
+    <div class="trust-row">
+      <span class="trust-badge">⚡ <span>Epic Games</span> 공인</span>
+      <span class="trust-badge">🧱 <span>LEGO Education</span> 파트너</span>
+      <span class="trust-badge">🎓 <span>UAI</span> 공인 강사</span>
+      <span class="trust-badge">🏆 <span>UCA</span> 인증</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+  03. PROGRAM
+════════════════════════════════════════════ -->
+<section id="program">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="section-tag">CURRICULUM</span>
+      <h2 class="section-title">우리의 <span>프로그램</span></h2>
+      <p class="section-desc">아이의 나이와 목표에 맞는 3가지 커리큘럼을 제공합니다</p>
+    </div>
+
+    <div class="prog-tabs reveal d1">
+      <button class="prog-tab-btn active" data-tab="after">🏫 방과후 과정</button>
+      <button class="prog-tab-btn" data-tab="camp">⛺ 캠프 과정</button>
+      <button class="prog-tab-btn" data-tab="regular">🎓 정규 과정</button>
+    </div>
+
+    <!-- 방과후 -->
+    <div id="prog-after" class="prog-card active">
+      <div class="prog-item reveal">
+        <div class="prog-item-icon">📅</div>
+        <div class="prog-item-label">SCHEDULE</div>
+        <div class="prog-item-title">운영 일정</div>
+        <div class="prog-item-rows">
+          <div class="prog-row"><span class="prog-row-key">운영 형태</span><span class="prog-row-val">주 1~2회, 학교·학원 파견</span></div>
+          <div class="prog-row"><span class="prog-row-key">시간</span><span class="prog-row-val">60~90분 / 회</span></div>
+          <div class="prog-row"><span class="prog-row-key">대상</span><span class="prog-row-val">초등 1~6학년</span></div>
+        </div>
+        <span class="prog-badge">🎯 Creativity</span>
+      </div>
+      <div class="prog-item reveal d1">
+        <div class="prog-item-icon">📚</div>
+        <div class="prog-item-label">CURRICULUM</div>
+        <div class="prog-item-title">커리큘럼 구성</div>
+        <div class="prog-item-rows">
+          <div class="prog-row"><span class="prog-row-key">기간</span><span class="prog-row-val">2개월 방과후 커리큘럼</span></div>
+          <div class="prog-row"><span class="prog-row-key">테마</span><span class="prog-row-val">테마별 12차시</span></div>
+          <div class="prog-row"><span class="prog-row-key">수료 혜택</span><span class="prog-row-val">수료증 발급</span></div>
+        </div>
+      </div>
+      <div class="prog-item reveal d2">
+        <div class="prog-item-icon">🏆</div>
+        <div class="prog-item-label">BENEFITS</div>
+        <div class="prog-item-title">참여 혜택</div>
+        <div class="prog-item-rows">
+          <div class="prog-row"><span class="prog-row-key">수료증</span><span class="prog-row-val">Epic 공인 수료증</span></div>
+          <div class="prog-row"><span class="prog-row-key">포트폴리오</span><span class="prog-row-val">LEGO 제작물 사진</span></div>
+          <div class="prog-row"><span class="prog-row-key">수업 방식</span><span class="prog-row-val">프로젝트 기반 학습</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 캠프 -->
+    <div id="prog-camp" class="prog-card">
+      <div class="prog-item reveal">
+        <div class="prog-item-icon">🗓️</div>
+        <div class="prog-item-label">SCHEDULE</div>
+        <div class="prog-item-title">캠프 일정</div>
+        <div class="prog-item-rows">
+          <div class="prog-row"><span class="prog-row-key">운영 형태</span><span class="prog-row-val">5일 집중 (월~금)</span></div>
+          <div class="prog-row"><span class="prog-row-key">시간</span><span class="prog-row-val">오전 9~12시 / 오후 1~4시</span></div>
+          <div class="prog-row"><span class="prog-row-key">대상</span><span class="prog-row-val">초등 1~6학년</span></div>
+        </div>
+        <span class="prog-badge">🚀 STEAM</span>
+      </div>
+      <div class="prog-item reveal d1">
+        <div class="prog-item-icon">🎮</div>
+        <div class="prog-item-label">CURRICULUM</div>
+        <div class="prog-item-title">5일 집중 커리큘럼</div>
+        <div class="prog-item-rows">
+          <div class="prog-row"><span class="prog-row-key">Day 1~2</span><span class="prog-row-val">LEGO 조립 & 설계</span></div>
+          <div class="prog-row"><span class="prog-row-key">Day 3~4</span><span class="prog-row-val">포트나이트 맵 제작</span></div>
+          <div class="prog-row"><span class="prog-row-key">Day 5</span><span class="prog-row-val">발표 & 수료식</span></div>
+        </div>
+      </div>
+      <div class="prog-item reveal d2">
+        <div class="prog-item-icon">🥇</div>
+        <div class="prog-item-label">BENEFITS</div>
+        <div class="prog-item-title">캠프 특별 혜택</div>
+        <div class="prog-item-rows">
+          <div class="prog-row"><span class="prog-row-key">수료증</span><span class="prog-row-val">Epic 공식 수료증 + 수료식</span></div>
+          <div class="prog-row"><span class="prog-row-key">영상</span><span class="prog-row-val">발표 사진·영상 제공</span></div>
+          <div class="prog-row"><span class="prog-row-key">포트폴리오</span><span class="prog-row-val">맵 스크린샷 제공</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 정규 -->
+    <div id="prog-regular" class="prog-card">
+      <div class="prog-item reveal">
+        <div class="prog-item-icon">🏛️</div>
+        <div class="prog-item-label">SCHEDULE</div>
+        <div class="prog-item-title">정규 과정 일정</div>
+        <div class="prog-item-rows">
+          <div class="prog-row"><span class="prog-row-key">운영 형태</span><span class="prog-row-val">주 N회 자체 센터</span></div>
+          <div class="prog-row"><span class="prog-row-key">시간</span><span class="prog-row-val">협의</span></div>
+          <div class="prog-row"><span class="prog-row-key">대상</span><span class="prog-row-val">7세 이상</span></div>
+        </div>
+        <span class="prog-badge">⚙️ Engineering</span>
+      </div>
+      <div class="prog-item reveal d1">
+        <div class="prog-item-icon">📐</div>
+        <div class="prog-item-label">CURRICULUM</div>
+        <div class="prog-item-title">맞춤 커리큘럼</div>
+        <div class="prog-item-rows">
+          <div class="prog-row"><span class="prog-row-key">기간</span><span class="prog-row-val">1학기 정규 커리큘럼</span></div>
+          <div class="prog-row"><span class="prog-row-key">설계</span><span class="prog-row-val">맞춤 설계</span></div>
+          <div class="prog-row"><span class="prog-row-key">수료 혜택</span><span class="prog-row-val">수료증 발급</span></div>
+        </div>
+      </div>
+      <div class="prog-item reveal d2">
+        <div class="prog-item-icon">💎</div>
+        <div class="prog-item-label">BENEFITS</div>
+        <div class="prog-item-title">정규 과정 혜택</div>
+        <div class="prog-item-rows">
+          <div class="prog-row"><span class="prog-row-key">레벨</span><span class="prog-row-val">단계별 성장 관리</span></div>
+          <div class="prog-row"><span class="prog-row-key">포트폴리오</span><span class="prog-row-val">누적 작품집 제공</span></div>
+          <div class="prog-row"><span class="prog-row-key">심화</span><span class="prog-row-val">고급 과정 연계</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+  04. INSTRUCTORS & PARTNERS
+════════════════════════════════════════════ -->
+<section id="instructors">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="section-tag">INSTRUCTORS</span>
+      <h2 class="section-title">공인 강사 <span>&amp; 파트너</span></h2>
+      <p class="section-desc">Epic Games 공인 강사가 직접 지도하는 수업</p>
+    </div>
+
+    <div class="inst-grid">
+      <div class="inst-card reveal">
+        <div class="inst-photo">
+          <img src="assets/images/instructor-cliff.jpg" alt="Cliff Lee 강사" onerror="this.style.display='none'">
+          👨‍💻
+        </div>
+        <div class="inst-body">
+          <h3 class="inst-name">Cliff Lee</h3>
+          <p class="inst-role">Lead Instructor &amp; MonsteraTech 개발자</p>
+          <div class="inst-certs">
+            <span class="inst-cert">UAI 공인</span>
+            <span class="inst-cert">UCA 강사</span>
+            <span class="inst-cert">LEGO Education</span>
+            <span class="inst-cert">MonsteraTech</span>
+          </div>
+          <p class="inst-desc">Unreal(Epic) 공인 강사 · UCA 강사 · LEGO Education 전문가 · MonsteraTech 개발자. 게임과 교육의 경계를 허무는 창의적 수업을 설계합니다.</p>
+        </div>
+      </div>
+
+      <div class="inst-card reveal d2">
+        <div class="inst-photo">
+          <img src="assets/images/instructor-emma.jpg" alt="Emma Jeon 강사" onerror="this.style.display='none'">
+          👩‍🎨
+        </div>
+        <div class="inst-body">
+          <h3 class="inst-name">Emma Jeon</h3>
+          <p class="inst-role">Creative Director &amp; 3D 디자이너</p>
+          <div class="inst-certs">
+            <span class="inst-cert">UAI 공인</span>
+            <span class="inst-cert">UCA 강사</span>
+            <span class="inst-cert">LEGO Education</span>
+            <span class="inst-cert">ZGM 3D</span>
+          </div>
+          <p class="inst-desc">Unreal(Epic) 공인 강사 · LEGO Education 전문가 · 네이버 Z 크리에이터 · ZGM 3D 디자이너. 아이들의 상상을 3D 세계로 구현합니다.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 파트너 마퀴 -->
+    <div class="partner-section reveal">
+      <p class="partner-title">공식 파트너 &amp; 인증 기관</p>
+      <div class="marquee-wrap">
+        <div class="marquee-track" id="marquee-track">
+          <span class="partner-logo">⚡ Epic Games</span>
+          <span class="partner-logo">🎮 Unreal Engine</span>
+          <span class="partner-logo">🧱 LEGO Education</span>
+          <span class="partner-logo">🏆 UATC</span>
+          <span class="partner-logo">🎓 UAI</span>
+          <span class="partner-logo">🌐 UCA</span>
+          <span class="partner-logo">🔷 MonsteraTech</span>
+          <span class="partner-logo">⚡ Epic Games</span>
+          <span class="partner-logo">🎮 Unreal Engine</span>
+          <span class="partner-logo">🧱 LEGO Education</span>
+          <span class="partner-logo">🏆 UATC</span>
+          <span class="partner-logo">🎓 UAI</span>
+          <span class="partner-logo">🌐 UCA</span>
+          <span class="partner-logo">🔷 MonsteraTech</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+  05. GALLERY
+════════════════════════════════════════════ -->
+<section id="gallery">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="section-tag">GALLERY</span>
+      <h2 class="section-title">현장 <span>갤러리</span></h2>
+      <p class="section-desc">아이들이 만들어가는 생생한 교육 현장을 확인하세요</p>
+    </div>
+    <div class="gallery-filters reveal d1">
+      <button class="gallery-filter-btn active" data-filter="all">전체</button>
+      <button class="gallery-filter-btn" data-filter="camp">캠프 현장</button>
+      <button class="gallery-filter-btn" data-filter="lego">LEGO 제작</button>
+      <button class="gallery-filter-btn" data-filter="fortnite">포트나이트</button>
+      <button class="gallery-filter-btn" data-filter="cert">수료식</button>
+    </div>
+    <div id="gallery-grid"></div>
+    <div class="gallery-yt reveal">
+      <iframe src="https://www.youtube.com/embed/videoseries?list=PLYOr6qvG7LSfW0l5bq6UbRlgG9g0NXKZ4&autoplay=0"
+        title="BrickSync 교육 영상" allowfullscreen loading="lazy"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+  06. BENEFITS
+════════════════════════════════════════════ -->
+<section id="benefits">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="section-tag">BENEFITS</span>
+      <h2 class="section-title">수료 <span>혜택</span></h2>
+      <p class="section-desc">BrickSync 수업 수료 시 받을 수 있는 특별한 혜택들</p>
+    </div>
+    <div class="benefits-grid">
+      <div class="benefit-card reveal">
+        <div class="benefit-icon">🏅</div>
+        <span class="benefit-num">BENEFIT 01</span>
+        <h3 class="benefit-title">Epic Games UAI 공인 교육</h3>
+        <p class="benefit-desc">Unreal Authorized Instructor(UAI)가 직접 지도하는 세계적 수준의 창의 코딩 교육을 경험합니다.</p>
+      </div>
+      <div class="benefit-card reveal d1">
+        <div class="benefit-icon">📜</div>
+        <span class="benefit-num">BENEFIT 02</span>
+        <h3 class="benefit-title">Epic Korea 공인 수료증</h3>
+        <p class="benefit-desc">Epic Korea가 공식 인증하는 수료증을 발급받아 포트폴리오에 활용할 수 있습니다.</p>
+      </div>
+      <div class="benefit-card reveal d2">
+        <div class="benefit-icon">📸</div>
+        <span class="benefit-num">BENEFIT 03</span>
+        <h3 class="benefit-title">발표 사진·영상 제공</h3>
+        <p class="benefit-desc">최종 발표회의 사진과 영상을 전문적으로 촬영하여 아이의 성장 기록으로 제공합니다.</p>
+      </div>
+      <div class="benefit-card reveal d3">
+        <div class="benefit-icon">🗂️</div>
+        <span class="benefit-num">BENEFIT 04</span>
+        <h3 class="benefit-title">수료 포트폴리오</h3>
+        <p class="benefit-desc">LEGO 제작물 사진과 포트나이트 맵 스크린샷을 담은 디지털 포트폴리오를 제작합니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+  07. CONTACT (B2B)
+════════════════════════════════════════════ -->
+<section id="contact">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="section-tag">CONTACT</span>
+      <h2 class="section-title">교육 기관 <span>도입 문의</span></h2>
+      <p class="section-desc">학교·학원·문화센터 등 교육기관의 BrickSync 프로그램 도입을 도와드립니다</p>
+    </div>
+    <div class="contact-wrap reveal">
+      <div class="contact-info">
+        <h3>함께 시작해요 🚀</h3>
+        <p>BrickSync의 Epic Games 공인 창의 코딩 프로그램을 귀 기관에서도 운영하실 수 있습니다. 방과후, 캠프, 정규 과정 모두 맞춤 구성이 가능합니다.</p>
+        <div class="contact-detail">
+          <div class="contact-detail-item"><span class="icon">📧</span><span>jlee@monsteratech.co · ejeon@monsteratech.co</span></div>
+          <div class="contact-detail-item"><span class="icon">📞</span><span>010 · 5348 · 5761</span></div>
+          <div class="contact-detail-item"><span class="icon">📍</span><span>서울시 서대문구 이화여대길 52</span></div>
+          <div class="contact-detail-item"><span class="icon">🕐</span><span>평일 09:00 – 18:00</span></div>
+        </div>
+      </div>
+
+      <div class="contact-form-box">
+        <form id="b2b-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="inst-type">기관 유형 <span class="req">*</span></label>
+              <select id="inst-type" name="기관유형" class="form-control" required>
+                <option value="">선택해주세요</option>
+                <option>초등학교</option>
+                <option>중학교</option>
+                <option>사설학원</option>
+                <option>문화센터</option>
+                <option>기타</option>
+              </select>
+              <span class="form-error">기관 유형을 선택해주세요.</span>
+            </div>
+            <div class="form-group">
+              <label for="inst-name">기관명 <span class="req">*</span></label>
+              <input id="inst-name" name="기관명" type="text" class="form-control" placeholder="기관명을 입력하세요" required>
+              <span class="form-error">기관명을 입력해주세요.</span>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="contact-name">담당자 이름 <span class="req">*</span></label>
+              <input id="contact-name" name="담당자이름" type="text" class="form-control" placeholder="담당자 이름" required>
+              <span class="form-error">담당자 이름을 입력해주세요.</span>
+            </div>
+            <div class="form-group">
+              <label for="contact-tel">연락처 <span class="req">*</span></label>
+              <input id="contact-tel" name="연락처" type="tel" class="form-control" placeholder="010-0000-0000" required>
+              <span class="form-error">연락처를 입력해주세요.</span>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="contact-email">이메일 <span class="req">*</span></label>
+              <input id="contact-email" name="이메일" type="email" class="form-control" placeholder="email@example.com" required>
+              <span class="form-error">이메일을 입력해주세요.</span>
+            </div>
+            <div class="form-group">
+              <label for="student-count">예상 학생 수</label>
+              <select id="student-count" name="예상학생수" class="form-control">
+                <option value="">선택해주세요</option>
+                <option>10명 미만</option>
+                <option>10 – 30명</option>
+                <option>30명 이상</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>희망 운영 형태</label>
+            <div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:4px">
+              <label style="display:flex;align-items:center;gap:6px;font-size:.9rem;color:var(--t2);cursor:pointer"><input type="checkbox" name="운영형태" value="방과후" style="accent-color:var(--primary)"> 방과후</label>
+              <label style="display:flex;align-items:center;gap:6px;font-size:.9rem;color:var(--t2);cursor:pointer"><input type="checkbox" name="운영형태" value="캠프" style="accent-color:var(--primary)"> 캠프</label>
+              <label style="display:flex;align-items:center;gap:6px;font-size:.9rem;color:var(--t2);cursor:pointer"><input type="checkbox" name="운영형태" value="정규과정" style="accent-color:var(--primary)"> 정규 과정</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="start-date">희망 시작 시기</label>
+            <input id="start-date" name="시작시기" type="month" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="b2b-message">문의 내용 <span style="font-weight:400;color:var(--t3)">(최대 500자)</span></label>
+            <textarea id="b2b-message" name="문의내용" class="form-control" rows="5" maxlength="500" placeholder="궁금한 사항을 자유롭게 작성해주세요..."></textarea>
+            <div class="char-count"><span id="msg-count">0</span> / 500</div>
+          </div>
+          <div class="form-check">
+            <input type="checkbox" id="b2b-consent" name="개인정보동의" required>
+            <label for="b2b-consent">
+              <a href="#" onclick="return false">개인정보처리방침</a>에 동의합니다. 수집된 정보는 상담 목적으로만 사용됩니다. <span class="req">*</span>
+            </label>
+          </div>
+          <span id="consent-error" class="form-error" style="display:none;margin-bottom:12px">개인정보 수집에 동의해주세요.</span>
+          <button type="submit" class="form-submit-btn">도입 문의 보내기 <span>→</span></button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+  08. FOOTER
+════════════════════════════════════════════ -->
+<footer id="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="gnb-logo" style="margin-bottom:14px">
+          <div class="gnb-logo-icon">🧱</div>
+          <span class="gnb-logo-text">BrickSync</span>
+        </div>
+        <p>LEGO × Fortnite 기반 창의 코딩 교육.<br>Epic Games 공인 강사가 운영하는<br>MonsteraTech의 교육 브랜드입니다.</p>
+      </div>
+      <div class="footer-col">
+        <h4>LINK</h4>
+        <ul>
+          <li><a href="#program">프로그램 소개</a></li>
+          <li><a href="#instructors">강사 소개</a></li>
+          <li><a href="#gallery">현장 갤러리</a></li>
+          <li><a href="#contact">도입 문의</a></li>
+          <li><a href="#">개인정보처리방침</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>SOCIAL</h4>
+        <div class="social-row">
+          <a href="#" class="social-btn" aria-label="Instagram">📸</a>
+          <a href="#" class="social-btn" aria-label="YouTube">▶️</a>
+        </div>
+        <p style="margin-top:16px">@bricksync_edu</p>
+      </div>
+      <div class="footer-col">
+        <h4>CONTACT</h4>
+        <p>jlee@monsteratech.co<br>ejeon@monsteratech.co<br><br>010 · 5348 · 5761<br>010 · 5348 · 5761<br><br>서울시 서대문구 이화여대길 52</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 MonsteraTech. All rights reserved. | 대표: 이준서 | 사업자등록번호: 000-00-00000</p>
+      <div class="footer-bottom-links">
+        <a href="#">개인정보처리방침</a>
+        <a href="#">이용약관</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Lightbox -->
+<div id="lightbox" role="dialog" aria-modal="true">
+  <button id="lb-close" aria-label="닫기">✕</button>
+  <button class="lb-nav" id="lb-prev" aria-label="이전">‹</button>
+  <img id="lb-img" src="" alt="">
+  <p id="lb-caption"></p>
+  <button class="lb-nav" id="lb-next" aria-label="다음">›</button>
+</div>
+
+<!-- Toast -->
+<div id="toast" role="alert" aria-live="polite"></div>
+
+<script src="js/main.js"></script>
+<script src="js/gallery.js"></script>
+<script src="js/form.js"></script>
+</body>
+</html>
