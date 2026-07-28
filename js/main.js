@@ -59,7 +59,7 @@ function initReveal() {
         obs.unobserve(e.target);
       }
     });
-  }, { threshold: 0.1 });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 }
 
@@ -76,14 +76,14 @@ function initParticles() {
   }
 
   function createParticles() {
-    particles = Array.from({ length: 60 }, () => ({
+    particles = Array.from({ length: 50 }, () => ({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
-      r: Math.random() * 2 + 0.5,
-      dx: (Math.random() - 0.5) * 0.4,
-      dy: (Math.random() - 0.5) * 0.4,
-      alpha: Math.random() * 0.5 + 0.1,
-      color: ['#FFD700', '#00C3FF', '#8B5CF6'][Math.floor(Math.random() * 3)]
+      r: Math.random() * 4 + 1.5,
+      dx: (Math.random() - 0.5) * 0.3,
+      dy: (Math.random() - 0.5) * 0.3,
+      alpha: Math.random() * 0.25 + 0.05,
+      color: ['#FFCC00', '#0EA5E9', '#7C3AED'][Math.floor(Math.random() * 3)]
     }));
   }
 
@@ -139,6 +139,20 @@ function initActiveSection() {
   sections.forEach(s => obs.observe(s));
 }
 
+// ── 맨 위로 이동 (Back to Top) ───────────────────
+function initBackToTop() {
+  const btt = document.getElementById('back-to-top');
+  if (!btt) return;
+
+  window.addEventListener('scroll', () => {
+    btt.classList.toggle('show', window.scrollY > 300);
+  });
+
+  btt.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
+
 // ── 초기화 ────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
   initNav();
@@ -147,4 +161,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initParticles();
   initProgramTabs();
   initActiveSection();
+  initBackToTop();
 });

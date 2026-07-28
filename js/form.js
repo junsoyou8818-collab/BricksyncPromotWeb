@@ -1,6 +1,10 @@
-// form.js - B2B 교육기관 상담 폼 처리
+// form.js - B2B 교육기관 상담 폼 처리 (i18n 연동)
 
 const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID';
+
+function getLang() {
+  return localStorage.getItem('bricksync_lang') || 'ko';
+}
 
 function initForm() {
   const form = document.getElementById('b2b-form');
@@ -20,8 +24,9 @@ function initForm() {
     e.preventDefault();
     if (!validateForm(form)) return;
 
+    const lang = getLang();
     submitBtn.disabled = true;
-    submitBtn.innerHTML = '<span class="spinner"></span> 전송 중...';
+    submitBtn.innerHTML = lang === 'en' ? '<span class="spinner"></span> Sending...' : '<span class="spinner"></span> 전송 중...';
 
     try {
       const data = new FormData(form);
@@ -32,17 +37,23 @@ function initForm() {
       });
 
       if (res.ok) {
-        showToast('문의가 성공적으로 전송되었습니다! 담당자가 확인 후 연락드리겠습니다.', 'success');
+        const successMsg = lang === 'en'
+          ? 'Your inquiry has been successfully sent! We will contact you soon.'
+          : '문의가 성공적으로 전송되었습니다! 담당자가 확인 후 연락드리겠습니다.';
+        showToast(successMsg, 'success');
         form.reset();
         if (charCount) charCount.textContent = '0';
       } else {
-        throw new Error('전송 실패');
+        throw new Error('Send failed');
       }
     } catch {
-      showToast('전송 중 오류가 발생했습니다. 이메일로 직접 문의해주세요.', 'error');
+      const errorMsg = lang === 'en'
+        ? 'An error occurred while sending. Please contact us via email directly.'
+        : '전송 중 오류가 발생했습니다. 이메일로 직접 문의해주세요.';
+      showToast(errorMsg, 'error');
     } finally {
       submitBtn.disabled = false;
-      submitBtn.innerHTML = '도입 문의 보내기 <span>→</span>';
+      submitBtn.innerHTML = lang === 'en' ? 'Submit Inquiry <span>→</span>' : '도입 문의 보내기 <span>→</span>';
     }
   });
 }

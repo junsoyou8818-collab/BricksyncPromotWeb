@@ -1,46 +1,208 @@
-// gallery.js - 갤러리 필터, 슬라이더, 라이트박스
+/**
+ * BrickSync Auto-Play Carousel Gallery & Lightbox Module
+ * Features: Auto-slide (3.5s), Pause on hover, Category filters, Responsive layout, Lightbox modal
+ */
 
 const galleryItems = [
-  { src: 'assets/images/gallery-1.jpg', category: 'camp', alt: '캠프 현장 1' },
-  { src: 'assets/images/gallery-2.jpg', category: 'lego', alt: 'LEGO 제작 1' },
-  { src: 'assets/images/gallery-3.jpg', category: 'fortnite', alt: '포트나이트 플레이 1' },
-  { src: 'assets/images/gallery-4.jpg', category: 'cert', alt: '수료식 1' },
-  { src: 'assets/images/gallery-5.jpg', category: 'camp', alt: '캠프 현장 2' },
-  { src: 'assets/images/gallery-6.jpg', category: 'lego', alt: 'LEGO 제작 2' },
+  {
+    src: 'img/gallery/gallery-practice-1.jpg',
+    category: 'practice',
+    alt_ko: 'BrickSync 플랫폼과 함께하는 포트나이트 3D 창의 코딩 실습',
+    alt_en: 'Fortnite 3D Creative Coding Practice with BrickSync Platform'
+  },
+  {
+    src: 'img/gallery/gallery-class-1.jpg',
+    category: 'class',
+    alt_ko: '고사양 게이밍 PC 대여 제공으로 진행되는 맞춤형 실습 교실',
+    alt_en: 'Customized Classroom Practice with High-Spec Laptop Rentals'
+  },
+  {
+    src: 'img/gallery/gallery-cert-large.jpg',
+    category: 'cert',
+    alt_ko: '포트나이트 창의 코딩 수료식 및 Epic 공식 수료증 발급',
+    alt_en: 'Fortnite Creative Coding Graduation & Official Epic Certificate'
+  },
+  {
+    src: 'img/gallery/gallery-cert-small.jpg',
+    category: 'cert',
+    alt_ko: '에픽게임즈 공인 강사와 함께하는 수료 현장',
+    alt_en: 'Graduation Ceremony with Epic Games Certified Instructor'
+  },
+  {
+    src: 'img/gallery/gallery-class-lecture.jpg',
+    category: 'class',
+    alt_ko: '단체 3D 코딩 실습 및 에픽 공인 강사 1:1 맞춤 피드백',
+    alt_en: 'Group 3D Coding Practice & 1:1 Certified Instructor Feedback'
+  },
+  {
+    src: 'img/gallery/gallery-unreal-fest.jpg',
+    category: 'class',
+    alt_ko: '에픽게임즈 UNREAL FEST 2025 몬스테라 공식 부스 및 포트나이트 3D 코딩 소개',
+    alt_en: 'Epic Games UNREAL FEST 2025 Monstera Official Booth & Fortnite 3D Coding Showcase'
+  }
 ];
 
-let currentLightboxIndex = 0;
 let currentFilter = 'all';
+let filteredItems = [...galleryItems];
+let currentIndex = 0;
+let autoSlideInterval = null;
+let currentLightboxIndex = 0;
 
-function initGallery() {
-  renderGallery('all');
-  initFilters();
-  initLightbox();
+function getAltText(item) {
+  const lang = localStorage.getItem('bricksync_lang') || 'ko';
+  return lang === 'en' ? item.alt_en : item.alt_ko;
 }
 
-function renderGallery(filter) {
-  const grid = document.getElementById('gallery-grid');
-  if (!grid) return;
+function initGallery() {
+  renderCarousel('all');
+  initFilters();
+  initLightbox();
+  initCarouselControls();
+  startAutoSlide();
+}
 
-  const filtered = filter === 'all'
+function renderCarousel(filter) {
+  currentFilter = filter || currentFilter;
+  filteredItems = currentFilter === 'all'
     ? galleryItems
-    : galleryItems.filter(i => i.category === filter);
+    : galleryItems.filter(i => i.category === currentFilter);
 
-  grid.innerHTML = filtered.map((item, idx) => `
-    <div class="gallery-item reveal" data-category="${item.category}" data-index="${idx}" style="transition-delay:${idx * 0.07}s">
-      <div class="gallery-img-wrap">
-        <img src="${item.src}" alt="${item.alt}" onerror="this.parentElement.classList.add('placeholder-img')" loading="lazy">
-        <div class="gallery-overlay">
-          <span class="gallery-expand">⤢</span>
+  const track = document.getElementById('carousel-track');
+  const dotsContainer = document.getElementById('carousel-dots');
+  if (!track) return;
+
+  currentIndex = 0;
+
+  // Render slides
+  track.innerHTML = filteredItems.map((item, idx) => {
+    const alt = getAltText(item);
+    return `
+      <div class="carousel-slide ${idx === 0 ? 'active' : ''}" data-index="${idx}">
+        <div class="gallery-img-wrap" onclick="openLightbox(${idx})">
+          <img src="${item.src}" alt="${alt}" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-caption-title">${alt}</span>
+            <span class="gallery-expand">⤢ 크게 보기</span>
+          </div>
         </div>
       </div>
-    </div>
-  `).join('');
+    `;
+  }).join('');
 
-  grid.querySelectorAll('.gallery-item').forEach((el, i) => {
-    setTimeout(() => el.classList.add('revealed'), 50 + i * 70);
-    el.addEventListener('click', () => openLightbox(i, filtered));
+  // Render pagination dots
+  if (dotsContainer) {
+    dotsContainer.innerHTML = filteredItems.map((_, idx) => `
+      <span class="dot ${idx === 0 ? 'active' : ''}" onclick="goToSlide(${idx})"></span>
+    `).join('');
+  }
+
+  updateCarouselPosition();
+}
+
+function updateCarouselPosition() {
+  const track = document.getElementById('carousel-track');
+  const slides = document.querySelectorAll('.carousel-slide');
+  const dots = document.querySelectorAll('.carousel-dots .dot');
+
+  if (!slides.length) return;
+
+  slides.forEach((slide, idx) => {
+    slide.classList.toggle('active', idx === currentIndex);
   });
+
+  dots.forEach((dot, idx) => {
+    dot.classList.toggle('active', idx === currentIndex);
+  });
+
+  if (track) {
+    const offset = -currentIndex * 100;
+    track.style.transform = `translateX(${offset}%)`;
+  }
+
+  // 🔄 상단 카테고리 필터 버튼 자동 하이라이트 연동 (Filter Button Sync)
+  if (filteredItems[currentIndex]) {
+    const currentCategory = filteredItems[currentIndex].category;
+    document.querySelectorAll('.gallery-filter-btn').forEach(btn => {
+      if (currentFilter === 'all') {
+        const isCurrentCategory = btn.dataset.filter === currentCategory || btn.dataset.filter === 'all';
+        btn.classList.toggle('active-sync', btn.dataset.filter === currentCategory);
+      }
+    });
+  }
+}
+
+function nextSlide() {
+  if (!filteredItems.length) return;
+  currentIndex = (currentIndex + 1) % filteredItems.length;
+  updateCarouselPosition();
+}
+
+function prevSlide() {
+  if (!filteredItems.length) return;
+  currentIndex = (currentIndex - 1 + filteredItems.length) % filteredItems.length;
+  updateCarouselPosition();
+}
+
+function goToSlide(index) {
+  currentIndex = index;
+  updateCarouselPosition();
+  resetAutoSlide();
+}
+
+function startAutoSlide() {
+  stopAutoSlide();
+  autoSlideInterval = setInterval(nextSlide, 3500);
+}
+
+function stopAutoSlide() {
+  if (autoSlideInterval) {
+    clearInterval(autoSlideInterval);
+    autoSlideInterval = null;
+  }
+}
+
+function resetAutoSlide() {
+  stopAutoSlide();
+  startAutoSlide();
+}
+
+function initCarouselControls() {
+  const prevBtn = document.getElementById('carousel-prev');
+  const nextBtn = document.getElementById('carousel-next');
+  const wrap = document.querySelector('.gallery-carousel-wrap');
+
+  prevBtn?.addEventListener('click', () => {
+    prevSlide();
+    resetAutoSlide();
+  });
+
+  nextBtn?.addEventListener('click', () => {
+    nextSlide();
+    resetAutoSlide();
+  });
+
+  // Pause on hover
+  wrap?.addEventListener('mouseenter', stopAutoSlide);
+  wrap?.addEventListener('mouseleave', startAutoSlide);
+
+  // Touch swipe support for mobile
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  wrap?.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+    stopAutoSlide();
+  }, { passive: true });
+
+  wrap?.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    if (touchStartX - touchEndX > 40) {
+      nextSlide();
+    } else if (touchEndX - touchStartX > 40) {
+      prevSlide();
+    }
+    startAutoSlide();
+  }, { passive: true });
 }
 
 function initFilters() {
@@ -49,42 +211,45 @@ function initFilters() {
       document.querySelectorAll('.gallery-filter-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       currentFilter = btn.dataset.filter;
-      renderGallery(currentFilter);
+      renderCarousel(currentFilter);
+      resetAutoSlide();
     });
   });
 }
 
-function openLightbox(index, items) {
+// Lightbox Modal
+function openLightbox(index) {
   const lb = document.getElementById('lightbox');
   const img = document.getElementById('lb-img');
   const cap = document.getElementById('lb-caption');
-  if (!lb || !img) return;
+  if (!lb || !img || !filteredItems[index]) return;
 
   currentLightboxIndex = index;
-  img.src = items[index].src;
-  img.onerror = () => { img.src = ''; img.alt = items[index].alt; };
-  if (cap) cap.textContent = items[index].alt;
+  const alt = getAltText(filteredItems[index]);
+  img.src = filteredItems[index].src;
+  if (cap) cap.textContent = alt;
+
   lb.classList.add('open');
   document.body.style.overflow = 'hidden';
-
-  lb._items = items;
+  stopAutoSlide();
 }
 
 function closeLightbox() {
   const lb = document.getElementById('lightbox');
   if (lb) lb.classList.remove('open');
   document.body.style.overflow = '';
+  startAutoSlide();
 }
 
 function lightboxNav(dir) {
-  const lb = document.getElementById('lightbox');
-  if (!lb || !lb._items) return;
-  const items = lb._items;
-  currentLightboxIndex = (currentLightboxIndex + dir + items.length) % items.length;
+  if (!filteredItems.length) return;
+  currentLightboxIndex = (currentLightboxIndex + dir + filteredItems.length) % filteredItems.length;
   const img = document.getElementById('lb-img');
   const cap = document.getElementById('lb-caption');
-  if (img) { img.src = items[currentLightboxIndex].src; }
-  if (cap) cap.textContent = items[currentLightboxIndex].alt;
+  const alt = getAltText(filteredItems[currentLightboxIndex]);
+
+  if (img) img.src = filteredItems[currentLightboxIndex].src;
+  if (cap) cap.textContent = alt;
 }
 
 function initLightbox() {
@@ -102,5 +267,7 @@ function initLightbox() {
     if (e.key === 'ArrowRight') lightboxNav(1);
   });
 }
+
+window.renderGallery = () => renderCarousel(currentFilter);
 
 document.addEventListener('DOMContentLoaded', initGallery);
