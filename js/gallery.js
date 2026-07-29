@@ -268,6 +268,13 @@ function initLightbox() {
   });
 }
 
-window.renderGallery = () => renderCarousel(currentFilter);
+window.renderGallery = () => {
+  renderCarousel(currentFilter);
+  const lb = document.getElementById('lightbox');
+  if (lb && lb.classList.contains('open') && filteredItems[currentLightboxIndex]) {
+    const cap = document.getElementById('lb-caption');
+    if (cap) cap.textContent = getAltText(filteredItems[currentLightboxIndex]);
+  }
+};
 
 document.addEventListener('DOMContentLoaded', initGallery);

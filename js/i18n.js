@@ -235,6 +235,46 @@ const translations = {
     "faq-q5": "학교, 사설학원, 문화센터 등 기관 단체 도입 문의도 가능한가요?",
     "faq-a5": "네 가능합니다. B2B / B2G 기관 도입 상담 폼을 통해 맞춤형 강사 파견 및 단체 캠프/특강 일정을 협의하실 수 있습니다.",
 
+    // Program Card Titles & Descs
+    "card-title-after": "방과후 창의 코딩 교실",
+    "card-title-camp": "방학 몰입 캠프 (5일)",
+    "card-title-regular": "센터 정규 교육 과정",
+    "card-title-special": "맞춤형 기관 특강",
+    "card-desc-after": "주 1~2회 정기 수업으로 차근차근 익히는 3D 메타버스 코딩",
+    "card-desc-camp": "방학 기간 5일 동안 나만의 포트나이트 3D 메타버스 맵을 완성하는 몰입형 코딩 캠프",
+    "card-desc-regular": "체계적인 단계별 커리큘럼으로 3D 공간 제작부터 UEFN 전문 코딩까지 익히는 정규 과정",
+    "card-desc-special": "학교, 기업, 청소년 수련관 등 기관 맞춤형 단체 출강 및 특별 체험 캠프",
+    "badge-target-after": "초등 1~6학년",
+    "badge-target-camp": "초등 1~6학년 전용",
+    "badge-target-reg": "전 연령 (7세 이상)",
+    "badge-target-spec": "맞춤 설계",
+
+    // Bullet Points
+    "b1-after-1": "주 1~2회 (60분~90분) 차시별 순차 진행",
+    "b1-after-2": "학습 성취도 1:1 대시보드 관리",
+    "b1-after-3": "차시별 3D 오브젝트 창작 및 로직 연결",
+    "b1-after-4": "에픽게임즈 공식 수료증 발급",
+    "b2-camp-1": "월~금 5일 연속 집중 몰입 과정 (오전/오후)",
+    "b2-camp-2": "마지막 날 학부모 초청 수료식 및 작품 발표회",
+    "b2-camp-3": "나만의 포트나이트 3D 메타버스 맵 완편 제작",
+    "b2-camp-4": "공식 수료증 및 액자형 기념사진 증정",
+    "b3-reg-1": "월 단위 / 학기 단위 연간 맞춤 커리큘럼",
+    "b3-reg-2": "초급(기초) - 중급(로직) - 심화(UEFN) 단계별 학습",
+    "b3-reg-3": "학부모 전용 연동 코드로 성취도 리포트 제공",
+    "b3-reg-4": "심화 과정 이수 시 UEFN 전문가 트랙 연결",
+    "b4-spec-1": "학교 직업 체험 캠프 / 청소년 수련관 특강",
+    "b4-spec-2": "기업 임직원 자녀 대상 주말 1-Day 캠프",
+    "b4-spec-3": "기관 보유 PC 수량 및 환경에 맞춘 출강 지원",
+    "b4-spec-4": "맞춤형 교재 및 1:1 보조 강사 파견 가능",
+
+    // Form Errors
+    "err-type": "기관 유형을 선택해주세요.",
+    "err-name": "기관명을 입력해주세요.",
+    "err-cname": "담당자 이름을 입력해주세요.",
+    "err-tel": "올바른 연락처를 입력해주세요.",
+    "err-email": "올바른 이메일을 입력해주세요.",
+    "err-consent": "개인정보 수집에 동의해주세요.",
+
     // Footer
     "footer-company-name": "(주)몬스테라텍",
     "footer-info-rep-biz": "대표자 : 최창호 | 사업자 등록증번호 : 764-88-02769",
@@ -289,7 +329,7 @@ const translations = {
     "btn-plat-map": "🧱 Go to Fortnite Coding Practice ↗",
 
     // Hero
-    "hero-main-title": "<span class=\"yl\">Make!</span> <span class=\"bl\">Move!</span> Imagine!",
+    "hero-main-title": "<span class=\"yl\">Build!</span> <span class=\"bl\">Code!</span> Imagine!",
     "hero-badge-epic": "Epic Games Authorized Training Center",
     "hero-badge-steam": "STEAM Education Partner",
     "hero-badge-since": "Since 2025",
@@ -310,6 +350,38 @@ const translations = {
     "tab-camp": "⛺ Camp Program",
     "tab-regular": "🎓 Regular Course",
     "tab-special": "💼 Custom Lectures",
+
+    // Program Card Titles & Descs
+    "card-title-after": "After-School Creative Coding",
+    "card-title-camp": "5-Day Intensive Vacation Camp",
+    "card-title-regular": "Regular Center Curriculum",
+    "card-title-special": "Customized Institutional Lectures",
+    "card-desc-after": "Step-by-step 3D Metaverse Coding taught in regular 1-2 sessions per week",
+    "card-desc-camp": "Immersive 5-day holiday camp building your personal complete 3D Fortnite Metaverse map",
+    "card-desc-regular": "Comprehensive multi-level curriculum covering 3D spatial design to advanced UEFN coding",
+    "card-desc-special": "Tailored group workshops & special camps for schools, corporations, and youth centers",
+    "badge-target-after": "Grades 1–6",
+    "badge-target-camp": "Grades 1–6 Special",
+    "badge-target-reg": "All Ages (7+)",
+    "badge-target-spec": "Custom Design",
+
+    // Bullet Points
+    "b1-after-1": "Sequential 60-90 min lessons (1-2 times/week)",
+    "b1-after-2": "1:1 individual student dashboard tracking",
+    "b1-after-3": "3D object design & logic wiring per unit",
+    "b1-after-4": "Official Epic Games Certificate issued",
+    "b2-camp-1": "5-day intensive immersion (Mon-Fri, AM/PM)",
+    "b2-camp-2": "Final showcase & graduation ceremony with parents",
+    "b2-camp-3": "Complete personal 3D Fortnite metaverse map creation",
+    "b2-camp-4": "Official certificate & framed commemorative photo",
+    "b3-reg-1": "Monthly / semester-based annual custom curriculum",
+    "b3-reg-2": "Step-by-step: Beginner -> Logic -> UEFN Expert",
+    "b3-reg-3": "Parent portal updates via unique access code",
+    "b3-reg-4": "Direct pathway to UEFN developer specialization",
+    "b4-spec-1": "School career camps & youth center workshops",
+    "b4-spec-2": "Corporate family 1-day weekend coding camps",
+    "b4-spec-3": "On-site instructor dispatch & PC infrastructure support",
+    "b4-spec-4": "Tailored textbooks & assistant instructor dispatch",
 
     // Program Card Labels
     "lbl-sch": "SCHEDULE",
@@ -434,7 +506,7 @@ const translations = {
     "contact-desc": "Bringing BrickSync's Epic Games-certified programs to schools, academies, and cultural centers",
     "contact-head": "Let's Start Together 🚀",
     "contact-p": "Offer BrickSync's Epic Games-certified creative coding courses and custom Fortnite special programs at your institution. Special lectures, camps, and regular courses can all be tailored to your needs.",
-    "addr-city": "52 Ewhayeodae-gil, Seodaemun-gu, Seoul",
+    "addr-city": "33, Seocho-daero 74-gil, Seocho-gu, Seoul, Republic of Korea (4F)",
     "addr-time": "Mon-Fri 09:00 – 18:00",
 
     "lbl-inst-type": "Institution Type *",
@@ -449,6 +521,14 @@ const translations = {
     "msg-max": "(Max 500 chars)",
     "chk-consent": "I agree to the Privacy Policy. Information collected is used solely for consultation. *",
     "btn-submit": "Submit Inquiry →",
+
+    // Form Errors
+    "err-type": "Please select an institution type.",
+    "err-name": "Please enter the institution name.",
+    "err-cname": "Please enter the contact person's name.",
+    "err-tel": "Please enter a valid phone number.",
+    "err-email": "Please enter a valid email address.",
+    "err-consent": "Please agree to the Privacy Policy.",
 
     // Options & Placeholders
     "ph-select": "Please Select",
