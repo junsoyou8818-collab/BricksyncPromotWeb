@@ -27,7 +27,6 @@
       <li><a href="#intro" data-i18n="nav-intro">플랫폼 소개</a></li>
       <li><a href="#program" data-i18n="nav-program">프로그램</a></li>
       <li><a href="#instructors" data-i18n="nav-instructors">강사 소개</a></li>
-      <li><a href="#gallery" data-i18n="nav-gallery">갤러리</a></li>
       <li><a href="#about" data-i18n="nav-about">회사 소개</a></li>
       <li><a href="#benefits" data-i18n="nav-benefits">수료 혜택</a></li>
       <li><a href="#faq" data-i18n="nav-faq">자주 묻는 질문</a></li>
@@ -449,34 +448,6 @@
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════
-  05. GALLERY
-════════════════════════════════════════════ -->
-<section id="gallery">
-  <div class="container">
-    <div class="sec-head reveal">
-      <span class="section-tag" data-i18n="gal-tag">GALLERY</span>
-      <h2 class="section-title" data-i18n="gal-title">현장 <span>갤러리</span></h2>
-      <p class="section-desc" data-i18n="gal-desc">아이들이 만들어가는 생생한 교육 현장을 확인하세요</p>
-    </div>
-    <div class="gallery-filters reveal d1">
-      <button class="gallery-filter-btn active" data-filter="all" data-i18n="gal-all">전체</button>
-      <button class="gallery-filter-btn" data-filter="cert" data-i18n="gal-cert">수료식</button>
-      <button class="gallery-filter-btn" data-filter="practice" data-i18n="gal-practice">수업 실습</button>
-      <button class="gallery-filter-btn" data-filter="class" data-i18n="gal-class">교육 환경</button>
-    </div>
-
-    <!-- 🎠 자동 슬라이딩 카루셀 (Auto-Play Carousel) -->
-    <div class="gallery-carousel-wrap reveal d2">
-      <button class="carousel-btn prev-btn" id="carousel-prev" aria-label="이전 사진">❮</button>
-      <div class="carousel-track-container" id="carousel-track-container">
-        <div class="carousel-track" id="carousel-track"></div>
-      </div>
-      <button class="carousel-btn next-btn" id="carousel-next" aria-label="다음 사진">❯</button>
-      <div class="carousel-dots" id="carousel-dots"></div>
-    </div>
-  </div>
-</section>
 
 <!-- ═══════════════════════════════════════════
   06. BENEFITS
@@ -802,15 +773,6 @@
   </div>
 </footer>
 
-<!-- Lightbox -->
-<div id="lightbox" role="dialog" aria-modal="true">
-  <button id="lb-close" aria-label="닫기">✕</button>
-  <button class="lb-nav" id="lb-prev" aria-label="이전">‹</button>
-  <img id="lb-img" src="" alt="">
-  <p id="lb-caption"></p>
-  <button class="lb-nav" id="lb-next" aria-label="다음">›</button>
-</div>
-
 <!-- Toast -->
 <div id="toast" role="alert" aria-live="polite"></div>
 
@@ -822,7 +784,6 @@
 
 <script src="js/i18n.js"></script>
 <script src="js/main.js"></script>
-<script src="js/gallery.js"></script>
 <script src="js/form.js"></script>
 </body>
 </html>
