@@ -3,44 +3,7 @@
  * Features: Auto-slide (3.5s), Pause on hover, Category filters, Responsive layout, Lightbox modal
  */
 
-const galleryItems = [
-  {
-    src: 'img/gallery/gallery-practice-1.jpg',
-    category: 'practice',
-    alt_ko: 'BrickSync 플랫폼과 함께하는 포트나이트 3D 창의 코딩 실습',
-    alt_en: 'Fortnite 3D Creative Coding Practice with BrickSync Platform'
-  },
-  {
-    src: 'img/gallery/gallery-class-1.jpg',
-    category: 'class',
-    alt_ko: '고사양 게이밍 PC 대여 제공으로 진행되는 맞춤형 실습 교실',
-    alt_en: 'Customized Classroom Practice with High-Spec Laptop Rentals'
-  },
-  {
-    src: 'img/gallery/gallery-cert-large.jpg',
-    category: 'cert',
-    alt_ko: '포트나이트 창의 코딩 수료식 및 Epic 공식 수료증 발급',
-    alt_en: 'Fortnite Creative Coding Graduation & Official Epic Certificate'
-  },
-  {
-    src: 'img/gallery/gallery-cert-small.jpg',
-    category: 'cert',
-    alt_ko: '에픽게임즈 공인 강사와 함께하는 수료 현장',
-    alt_en: 'Graduation Ceremony with Epic Games Certified Instructor'
-  },
-  {
-    src: 'img/gallery/gallery-class-lecture.jpg',
-    category: 'class',
-    alt_ko: '단체 3D 코딩 실습 및 에픽 공인 강사 1:1 맞춤 피드백',
-    alt_en: 'Group 3D Coding Practice & 1:1 Certified Instructor Feedback'
-  },
-  {
-    src: 'img/gallery/gallery-unreal-fest.jpg',
-    category: 'class',
-    alt_ko: '에픽게임즈 UNREAL FEST 2025 몬스테라 공식 부스 및 포트나이트 3D 코딩 소개',
-    alt_en: 'Epic Games UNREAL FEST 2025 Monstera Official Booth & Fortnite 3D Coding Showcase'
-  }
-];
+const galleryItems = [];
 
 let currentFilter = 'all';
 let filteredItems = [...galleryItems];
@@ -49,6 +12,7 @@ let autoSlideInterval = null;
 let currentLightboxIndex = 0;
 
 function getAltText(item) {
+  if (!item) return '';
   const lang = localStorage.getItem('bricksync_lang') || 'ko';
   return lang === 'en' ? item.alt_en : item.alt_ko;
 }
@@ -72,6 +36,19 @@ function renderCarousel(filter) {
   if (!track) return;
 
   currentIndex = 0;
+
+  if (filteredItems.length === 0) {
+    const lang = localStorage.getItem('bricksync_lang') || 'ko';
+    const emptyMsg = lang === 'en' ? 'Gallery images coming soon.' : '갤러리 이미지가 준비 중입니다.';
+    track.innerHTML = `
+      <div class="gallery-empty-state" style="width:100%;text-align:center;padding:54px 20px;color:var(--t2);font-size:1.1rem;font-family:var(--fh);background:#ffffff;border:2px dashed var(--border);border-radius:var(--r2);margin:0 auto;">
+        <span style="font-size:2.8rem;display:block;margin-bottom:12px;">🖼️</span>
+        <span>${emptyMsg}</span>
+      </div>
+    `;
+    if (dotsContainer) dotsContainer.innerHTML = '';
+    return;
+  }
 
   // Render slides
   track.innerHTML = filteredItems.map((item, idx) => {
