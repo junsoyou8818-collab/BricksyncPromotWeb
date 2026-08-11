@@ -3,7 +3,7 @@
 const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID';
 
 function getLang() {
-  return localStorage.getItem('bricksync_lang') || 'ko';
+  return localStorage.getItem('monstera_lang') || 'ko';
 }
 
 function initForm() {

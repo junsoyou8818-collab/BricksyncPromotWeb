@@ -1,12 +1,12 @@
 /**
- * BrickSync i18n Internationalization Module (100% Complete & Meticulous Translation)
+ * MONSTERA i18n Internationalization Module (100% Complete & Meticulous Translation)
  * Seamless switching between Korean (ko) and English (en)
  */
 
 const translations = {
   ko: {
     // Navigation
-    "site-title": "MONSTERA BrickSync — 창의 코딩 교육 | Fortnite × STEAM",
+    "site-title": "MONSTERA — 창의 코딩 교육 | Fortnite × STEAM",
     "nav-program": "프로그램",
     "nav-about": "회사 소개",
     "nav-benefits": "수료 혜택",
@@ -119,7 +119,7 @@ const translations = {
     // Benefits
     "ben-tag": "BENEFITS",
     "ben-title": "수료 <span>혜택</span>",
-    "ben-desc": "BrickSync 수업 수료 시 받을 수 있는 특별한 혜택들",
+    "ben-desc": "몬스테라 창의 코딩 수업 수료 시 받을 수 있는 특별한 혜택들",
     "ben1-title": "Epic Games UAI 공인 교육",
     "ben1-desc": "Unreal Authorized Instructor(UAI)가 직접 지도하는 세계적 수준의 창의 코딩 교육을 경험합니다.",
     "ben2-title": "Epic Korea 공인 수료증",
@@ -132,9 +132,9 @@ const translations = {
     // Contact
     "contact-tag": "CONTACT",
     "contact-title": "교육 기관 <span>도입 문의</span>",
-    "contact-desc": "학교·학원·문화센터 등 교육기관의 BrickSync 프로그램 도입을 도와드립니다",
+    "contact-desc": "학교·학원·문화센터 등 교육기관의 몬스테라 창의 코딩 프로그램 도입을 도와드립니다",
     "contact-head": "함께 시작해요 🚀",
-    "contact-p": "BrickSync의 에픽게임즈 공인 창의 코딩 과정과 맞춤형 포트나이트 특강 프로그램을 귀 기관에서도 운영하실 수 있습니다. 특강, 캠프, 정규 과정 모두 맞춤형 설계가 가능합니다.",
+    "contact-p": "몬스테라의 에픽게임즈 공인 창의 코딩 과정과 맞춤형 포트나이트 특강 프로그램을 귀 기관에서도 운영하실 수 있습니다. 특강, 캠프, 정규 과정 모두 맞춤형 설계가 가능합니다.",
     "addr-city": "서울시 서대문구 이화여대길 52",
     "addr-time": "평일 09:00 – 18:00",
 
@@ -232,7 +232,7 @@ const translations = {
     "footer-info-addr": "주소 : 서울 서초구 서초동 1327-33, 4층",
     "footer-info-contact": "이메일 : jh.lee@monsteraedu.co.kr | 전화 : 010-5146-5161",
     "footer-contact-addr": "서울 서초구 서초대로74길 33",
-    "footer-brand-desc": "에픽게임즈 공식 파트너사로서 포트나이트 기반의 혁신적인 3D 코딩 학습 솔루션 MONSTERA BrickSync를 개발·운영합니다.",
+    "footer-brand-desc": "에픽게임즈 공식 파트너사로서 포트나이트 기반의 혁신적인 3D 코딩 학습 솔루션 혁신적인 3D 코딩 학습 솔루션을 개발·운영합니다.",
     "footer-link-title": "LINK",
     "footer-social-title": "SOCIAL",
     "footer-contact-title": "CONTACT",
@@ -245,7 +245,7 @@ const translations = {
   },
   en: {
     // Navigation
-    "site-title": "MONSTERA BrickSync — Creative Coding Education | Fortnite × STEAM",
+    "site-title": "MONSTERA — Creative Coding Education | Fortnite × STEAM",
     "nav-program": "Programs",
     "nav-about": "About Us",
     "nav-benefits": "Benefits",
@@ -389,7 +389,7 @@ const translations = {
     // Benefits
     "ben-tag": "BENEFITS",
     "ben-title": "Program <span>Benefits</span>",
-    "ben-desc": "Special benefits and rewards gained through BrickSync education",
+    "ben-desc": "Special benefits and rewards gained through Monstera creative coding education",
     "ben1-title": "Epic Games UAI Certified Education",
     "ben1-desc": "Experience world-class creative coding education taught directly by Unreal Authorized Instructors (UAI).",
     "ben2-title": "Official Epic Korea Certificate",
@@ -402,9 +402,9 @@ const translations = {
     // Contact
     "contact-tag": "CONTACT",
     "contact-title": "Institutional <span>Inquiries</span>",
-    "contact-desc": "Bringing BrickSync's Epic Games-certified programs to schools, academies, and cultural centers",
+    "contact-desc": "Bringing Monstera's Epic Games-certified programs to schools, academies, and cultural centers",
     "contact-head": "Let's Start Together 🚀",
-    "contact-p": "Offer BrickSync's Epic Games-certified creative coding courses and custom Fortnite special programs at your institution. Special lectures, camps, and regular courses can all be tailored to your needs.",
+    "contact-p": "Offer Monstera's Epic Games-certified creative coding courses and custom Fortnite special programs at your institution. Special lectures, camps, and regular courses can all be tailored to your needs.",
     "addr-city": "33, Seocho-daero 74-gil, Seocho-gu, Seoul, Republic of Korea (4F)",
     "addr-time": "Mon-Fri 09:00 – 18:00",
 
@@ -452,7 +452,7 @@ const translations = {
     // FAQ Section
     "faq-tag": "F.A.Q",
     "faq-title": "Frequently Asked <span>Questions</span>",
-    "faq-desc": "Check out the most frequently asked questions about BrickSync Kids Fortnite Creative Coding.",
+    "faq-desc": "Check out the most frequently asked questions about Monstera Kids Fortnite Creative Coding.",
     "faq-q1": "Can children with zero coding or 3D graphics experience take the course?",
     "faq-a1": "Yes, absolutely! From basic computer operation to block/blueprint coding and 3D Fortnite metaverse map creation, Epic Games certified instructors guide students step-by-step with 1:1 feedback.",
     "faq-q2": "What software programs and technologies will students learn?",
@@ -470,7 +470,7 @@ const translations = {
     "footer-info-addr": "Address: 4F, 1327-33 Seocho-dong, Seocho-gu, Seoul, Republic of Korea",
     "footer-info-contact": "Email: jh.lee@monsteraedu.co.kr | Tel: +82-10-5146-5161",
     "footer-contact-addr": "4F, 33 Seocho-daero 74-gil, Seocho-gu, Seoul, Korea",
-    "footer-brand-desc": "As an Official Epic Games Partner, Monstera Tech develops and operates MONSTERA BrickSync, an innovative 3D coding learning solution based on Fortnite.",
+    "footer-brand-desc": "As an Official Epic Games Partner, Monstera Tech develops and operates an innovative 3D coding learning solution based on Fortnite.",
     "footer-link-title": "LINK",
     "footer-social-title": "SOCIAL",
     "footer-contact-title": "CONTACT",
@@ -483,12 +483,12 @@ const translations = {
   }
 };
 
-let currentLang = localStorage.getItem('bricksync_lang') || 'ko';
+let currentLang = localStorage.getItem('monstera_lang') || 'ko';
 
 window.setLanguage = function(lang) {
   if (!translations[lang]) return;
   currentLang = lang;
-  localStorage.setItem('bricksync_lang', lang);
+  localStorage.setItem('monstera_lang', lang);
 
   // Update text elements with data-i18n
   document.querySelectorAll('[data-i18n]').forEach(el => {
