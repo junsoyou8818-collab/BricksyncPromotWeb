@@ -99,7 +99,27 @@ section{padding:var(--py) 0}
 .trust-badge:nth-child(4){animation-delay:1.8s}
 .trust-badge span{color:var(--secondary)}
 
-
+/* ── Program Section ─────────────────────── */
+#program{background:transparent}
+.prog-tabs{display:flex;justify-content:center;gap:8px;margin-bottom:40px;flex-wrap:wrap}
+.prog-tab-btn{padding:12px 28px;background:#fff;border:1px solid var(--border);border-radius:var(--r4);font-family:var(--fh);font-weight:700;font-size:1.1rem;color:var(--t2);transition:var(--tr);box-shadow:0 2px 10px rgba(0,0,0,0.02);cursor:pointer}
+.prog-tab-btn.active{background:var(--secondary);color:#fff;border-color:var(--secondary);box-shadow:0 8px 25px rgba(124,58,237,.35);transform:translateY(-2px)}
+.prog-cards-wrap{position:relative}
+.prog-card{display:none;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;animation:tabSwitch .5s cubic-bezier(0.16,1,0.3,1)}
+.prog-card.active{display:grid}
+@keyframes tabSwitch{from{opacity:0;transform:translateY(24px) scale(0.96)}to{opacity:1;transform:translateY(0) scale(1)}}
+.prog-item{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--r2);padding:32px;transition:var(--tr);box-shadow:var(--shadow);will-change:transform,box-shadow}
+.prog-item:hover{border-color:rgba(124,58,237,0.5);background:#fff;transform:translateY(-10px) scale(1.02);box-shadow:0 24px 50px rgba(124,58,237,0.18),0 6px 20px rgba(0,0,0,0.04)}
+.prog-item-icon{font-size:2.5rem;margin-bottom:14px;transition:var(--tr)}
+.prog-item:hover .prog-item-icon{transform:scale(1.25) rotate(-6deg)}
+.prog-item-label{font-size:.85rem;font-family:var(--fc);letter-spacing:2px;text-transform:uppercase;color:var(--secondary);margin-bottom:8px}
+.prog-item-title{font-family:var(--fh);font-size:1.45rem;font-weight:800;margin-bottom:12px}
+.prog-item-rows{display:flex;flex-direction:column;gap:8px}
+.prog-row{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--border);font-size:1.05rem}
+.prog-row:last-child{border-bottom:none}
+.prog-row-key{color:var(--t2)}
+.prog-row-val{font-weight:600;color:var(--t1);text-align:right}
+.prog-badge{display:inline-block;margin-top:16px;padding:6px 16px;border-radius:var(--r4);font-size:.88rem;font-weight:700;background:rgba(124,58,237,.08);border:1px solid rgba(124,58,237,.2);color:var(--secondary)}
 
 /* ── Benefits ────────────────────────────── */
 .benefits-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px}
